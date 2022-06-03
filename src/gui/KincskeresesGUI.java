@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
-/**
- *
- * @author pille
- */
-public class KincskeresesGUI extends javax.swing.JFrame {
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
-    /**
-     * Creates new form KincskeresesGUI
-     */
+public class KincskeresesGUI extends javax.swing.JFrame {
+    private JButton[] gombok;
+    private Icon kep = null;
+    private char[] ladak;
+    
     public KincskeresesGUI() {
         initComponents();
+        
+    }
+    
+    public void gombnyomas(java.awt.event.ActionEvent evt, int szam) {
+        JButton gomb = (JButton) evt.getSource();
     }
 
     /**
@@ -88,18 +89,33 @@ public class KincskeresesGUI extends javax.swing.JFrame {
         btnEzust.setMaximumSize(new java.awt.Dimension(75, 75));
         btnEzust.setMinimumSize(new java.awt.Dimension(75, 75));
         btnEzust.setPreferredSize(new java.awt.Dimension(75, 75));
+        btnEzust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEzustActionPerformed(evt);
+            }
+        });
 
         btnBronz.setBackground(new java.awt.Color(255, 153, 51));
         btnBronz.setText("Bronz");
         btnBronz.setMaximumSize(new java.awt.Dimension(75, 75));
         btnBronz.setMinimumSize(new java.awt.Dimension(75, 75));
         btnBronz.setPreferredSize(new java.awt.Dimension(75, 75));
+        btnBronz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBronzActionPerformed(evt);
+            }
+        });
 
         btnArany.setBackground(new java.awt.Color(204, 204, 0));
         btnArany.setText("Arany");
         btnArany.setMaximumSize(new java.awt.Dimension(75, 75));
         btnArany.setMinimumSize(new java.awt.Dimension(75, 75));
         btnArany.setPreferredSize(new java.awt.Dimension(75, 75));
+        btnArany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAranyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlGombokLayout = new javax.swing.GroupLayout(pnlGombok);
         pnlGombok.setLayout(pnlGombokLayout);
@@ -161,6 +177,17 @@ public class KincskeresesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    private void btnAranyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAranyActionPerformed
+        gombnyomas(evt, 0);
+    }//GEN-LAST:event_btnAranyActionPerformed
+
+    private void btnEzustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEzustActionPerformed
+        gombnyomas(evt, 1);
+    }//GEN-LAST:event_btnEzustActionPerformed
+
+    private void btnBronzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBronzActionPerformed
+        gombnyomas(evt, 2);
+    }//GEN-LAST:event_btnBronzActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArany;
