@@ -3,19 +3,26 @@ package gui;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import modell.Lada;
 
 public class KincskeresesGUI extends javax.swing.JFrame {
-    private JButton[] gombok;
     private Icon kep = null;
     private char[] ladak;
+    private Lada lada;
+    private char kincses = Lada.getKINCSES_LADA();
     
     public KincskeresesGUI() {
         initComponents();
         
+        lada = new Lada();
+        ladak = lada.getLadak();
     }
     
     public void gombnyomas(java.awt.event.ActionEvent evt, int szam) {
         JButton gomb = (JButton) evt.getSource();
+        if(ladak[szam] == kincses) kep = new ImageIcon(this.getClass().getResource("kepek/kincs.jpg"));
+        else kep = new ImageIcon(this.getClass().getResource("kepek/helytelen.jpg"));
+        gomb.setIcon(kep);
     }
 
     /**

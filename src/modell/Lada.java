@@ -6,13 +6,19 @@ public class Lada {
     private static char[] ladak;
     
     public Lada() {
-    
+       feltoltes();
     }
     
     public Lada(char[] ladak) {
         this.ladak = ladak;
     }
-
+    
+    public static void feltoltes() {
+        ladak = new char[3];
+        for(int i = 0; i < ladak.length; i++) ladak[i] = URES_LADA;
+        ladak[ladak.length - 1] = KINCSES_LADA;
+    }
+    
     public static char getURES_LADA() {
         return URES_LADA;
     }
@@ -24,9 +30,4 @@ public class Lada {
     public static char[] getLadak() {
         return ladak;
     }
-
-    /* public static void setLadak(char[] ladak) {
-        for(int i = 0; i < 3; i++) ladak[i] = URES_LADA;
-        ladak[2] = KINCSES_LADA;
-    } */
 }
